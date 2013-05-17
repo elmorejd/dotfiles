@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/Users/joel'
+let g:netrw_dirhist_2='/Users/joel/Downloads'
+let g:netrw_dirhist_3='/Users/joel/Downloads/nn'
+let g:netrw_dirhist_4='/Users/joel/Downloads/nn/src'
