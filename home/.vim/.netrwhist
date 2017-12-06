@@ -1,6 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/joel'
-let g:netrw_dirhist_2='/Users/joel/Downloads'
-let g:netrw_dirhist_3='/Users/joel/Downloads/nn'
-let g:netrw_dirhist_4='/Users/joel/Downloads/nn/src'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/administrator/projects/helios/board-tools/linux/Makefile'
+let g:netrw_dirhist_2='/home/administrator/projects/helios/board-tools/emulator/test/test.c'
+let g:netrw_dirhist_3='/home/administrator/projects/helios/board-tools/emulator/src'
+let g:netrw_dirhist_4='/home/administrator/projects/helios/naptime'
+let g:netrw_dirhist_5='/home/administrator/projects/helios/board-tools/broadcast'
+let g:netrw_dirhist_6='/home/administrator/projects/helios/board-tools/emulator'
