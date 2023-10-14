@@ -45,7 +45,7 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sets how many lines of history VIM has to remember
-set history=700
+set history=10000
 syntax on
 filetype off
 call pathogen#infect()
@@ -170,8 +170,8 @@ set expandtab
 set smarttab
 
 " 1 tab == 4 spaces
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 
 " Linebreak on 500 characters
 set lbr
@@ -180,6 +180,12 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+set list
+set listchars=tab:\▸\ ,trail:·
+
+"highlight ExtraWhitespace ctermfg=133 ctermbg= cterm=NONE guifg=#75715e guibg=NONE gui=NONE
+"match ExtraWhitespace /\s\+$/
 
 
 """"""""""""""""""""""""""""""
@@ -403,4 +409,3 @@ function! <SID>BufcloseCloseIt()
 endfunction
 
 let g:ycm_confirm_extra_conf = 0
-

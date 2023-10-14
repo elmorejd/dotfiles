@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =1
+let g:netrw_dirhist_1='/media/jdelmore/data/projects/zephyrproject/zephyr/arch/arm/include/aarch32'
+let g:netrw_dirhist_0='/media/jdelmore/data/projects/zephyrproject/zephyr/boards/arm/neo_common'
+let g:netrw_dirhist_9='/media/jdelmore/data/projects/mcuboot/boot/zephyr'
+let g:netrw_dirhist_8='/media/jdelmore/data/projects/zephyrproject/zephyr/boards/arm/neo_common'
+let g:netrw_dirhist_7='/home/jdelmore/noent/solar-cam/data-logging'
+let g:netrw_dirhist_6='/home/jdelmore/noent/solar-cam/tests/battery'
+let g:netrw_dirhist_5='/home/jdelmore/noent/solar-cam/tests'
+let g:netrw_dirhist_4='/home/jdelmore/noent/solar-cam/tests/weather_shield'
+let g:netrw_dirhist_3='/home/jdelmore/noent/solar-cam/tests'
+let g:netrw_dirhist_2='/home/jdelmore/noent/solar-cam/tests/battery'
