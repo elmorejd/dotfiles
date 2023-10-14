@@ -126,7 +126,11 @@ set number
 " add mouse functionality
 set mouse=a
 
-silent !<command>
+if $SHELL =~ 'zsh'
+    " Your settings for zsh here
+elseif $SHELL =~ '/bash'
+  silent !<command>
+endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -279,6 +283,11 @@ if has("mac") || has("macunix")
   nmap <D-k> <M-k>
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
+endif
+
+if has('mac')
+  xnoremap y y:call system('pbcopy', @")<CR>
+  xnoremap p "_d:r !pbpaste<CR>
 endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
