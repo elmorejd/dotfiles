@@ -288,6 +288,17 @@ endif
 if has('mac')
   xnoremap y y:call system('pbcopy', @")<CR>
   xnoremap p "_d:r !pbpaste<CR>
+elseif has('win32') || has('win64')
+  xnoremap y y:call system('clip', @")<CR>
+  xnoremap p "_d:r !powershell Get-Clipboard<CR>
+elseif has('unix') && !has('mac') && !has('win32') && !has('win64')
+  if executable('xclip')
+    xnoremap y y:call system('xclip -selection clipboard', @")<CR>
+    xnoremap p "_d:r !xclip -selection clipboard -o<CR>
+  elseif executable('xsel')
+    xnoremap y y:call system('xsel --clipboard --input', @")<CR>
+    xnoremap p "_d:r !xsel --clipboard --output<CR>
+  endif
 endif
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
