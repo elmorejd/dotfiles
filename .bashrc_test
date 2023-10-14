@@ -1,0 +1,55 @@
+# Just shorten the cygwin path
+function __short_wd_cygwin() {
+    num_dirs=3
+    newPWD="${PWD/#$HOME/~}"
+    if [ $(echo -n $newPWD | awk -F '/' '{print NF}') -gt $num_dirs ]; then
+        newPWD=$(echo -n $newPWD | awk -F '/' '{print $1 "/.../" $(NF-1) "/" $(NF)}')
+    fi
+
+    echo -n $newPWD
+}
+
+# Convert shorten path and shorten the Windows path
+function __short_wd_cygpath() {
+    num_dirs=3
+    newPWD=$(cygpath -C ANSI -w ${PWD/#$HOME/~})
+    if [ $(echo -n $newPWD | awk -F '\\' '{print NF}') -gt $num_dirs ]; then
+        newPWD=$(echo -n $newPWD | awk -F '\\' '{print $1 "\\...\\" $(NF-1) "\\" $(NF)}')
+    fi
+
+    echo -n $newPWD
+}
+
+FMT_BOLD="\e[1m"
+FMT_RESET="\e[0m"
+FMT_UNBOLD="\e[21m"
+FG_BLACK="\e[36m"
+FG_BLUE="\e[34m"
+FG_CYAN="\e[36m"
+FG_GREEN="\e[32m"
+FG_MAGENTA="\e[35m"
+FG_RED="\e[31m"
+FG_WHITE="\e[97m"
+BG_BLUE="\e[44m"
+BG_GREEN="\e[42m"
+BG_MAGENTA="\e[45m"
+
+
+
+export PS1=\
+"\n \[${FG_BLUE}${FG_GREEN}${FMT_BOLD}\]\u\[${FMT_UNBOLD}\] @ \[${FG_GREEN}\]\h "\
+"\[${FG_BLACK}\]\$(__short_wd_cygpath) \[${FMT_RESET}${FG_BLUE}\]"\
+"\$(git branch 2> /dev/null | grep '^*' | colrm 1 2 | xargs -I BRANCH echo -n \"\[${FG_GREEN}\]BRANCH \[${FMT_RESET}${FG_MAGENTA}\]\")"\
+"\n \[${FG_BLUE}${FG_CYAN}\]\$ \[${FMT_RESET}\]"
+
+
+## Colorize the ls output ##
+alias ls='ls --color=auto'
+
+## Use a long listing format ##
+alias ll='ls -la'
+
+## Show hidden files ##
+alias l.='ls -d .* --color=auto'
+
+LS_COLORS=$LS_COLORS:'di=0;35:' ; export LS_COLORS
